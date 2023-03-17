@@ -72,17 +72,17 @@ class Maps:
             return False
 
     def pause(self):
-        pause_text = interface.Label(700, 200, 400, 200, None, self.color['background'])
-        pause_text.add_text("GAME PAUSED", 70, "Fonts/Capture_it.ttf", (236, 240, 241))
+        pause_text = interface.Label(600, 180, 400, 200, None, self.color['background'])
+        pause_text.add_text("Ойын тоқтатылды", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        replay = interface.Button(350, 500, 300, 100, self.draw_map, (244, 208, 63), (247, 220, 111))
-        replay.add_text("RESTART", 60, "Fonts/Capture_it.ttf", self.color['background'])
+        replay = interface.Button(250, 400, 500, 100, self.draw_map, (0, 255, 127), (144, 220, 144))
+        replay.add_text("Басынан", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
-        resume = interface.Button(750, 500, 300, 100, None, (88, 214, 141), (171, 235, 198))
-        resume.add_text("RESUME", 60, "Fonts/Capture_it.ttf", self.color['background'])
+        resume = interface.Button(900, 400, 500, 100, None, (240, 100, 240), (216, 191, 216))
+        resume.add_text("Жалғастыру", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
-        exit = interface.Button(1150, 500, 300, 100, close, (241, 148, 138), (245, 183, 177))
-        exit.add_text("QUIT", 60, "Fonts/Capture_it.ttf", self.color['background'])
+        exit = interface.Button(650, 600, 300, 100, close, (220, 20, 60), (245, 183, 177))
+        exit.add_text("Шығу", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
     
         while True:
