@@ -11,7 +11,7 @@ height = None
 display = None
 clock = pygame.time.Clock()
 
-ground = 200
+ground = 45
 
 d_velocity = 2.0
 
@@ -339,7 +339,7 @@ class Maps:
             level_cleared_text.add_text("ALL LEVEL CLEARED!", 80, "Fonts/Comic_Kings.ttf", (236, 240, 241))
 
         score_text = interface.Label(750, 300, 300, 100, None, self.color['background'])
-        score_text.add_text("SCORE: " + str(self.score), 55, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        score_text.add_text("ҰПАЙ: " + str(self.score), 55, "Fonts/Comic_Kings.ttf", (236, 240, 241))
 
         replay = interface.Button(350, 500, 300, 100, self.replay_level, (244, 208, 63), (247, 220, 111))
         replay.add_text("PLAY AGAIN", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
@@ -384,7 +384,7 @@ class Maps:
         level_failed_text.add_text("LEVEL FAILED!", 80, "Fonts/Comic_Kings.ttf", (236, 240, 241))
 
         score_text = interface.Label(750, 300, 300, 100, None, self.color['background'])
-        score_text.add_text("SCORE: " + str(self.score), 55, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        score_text.add_text("ҰПАЙ: " + str(self.score), 55, "Fonts/Comic_Kings.ttf", (236, 240, 241))
 
         replay = interface.Button(500, 500, 300, 100, self.draw_map, (244, 208, 63), (247, 220, 111))
         replay.add_text("TRY AGAIN", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
@@ -419,7 +419,7 @@ class Maps:
     def start_level(self, birds, pigs, blocks, walls):
         loop = True
 
-        slingshot = physics_engine.Slingshot(200, height - 200, 30, 200)
+        slingshot = physics_engine.Slingshot(250, height - 200, 30, 200)
 
         birds[0].load(slingshot)
 
@@ -429,14 +429,14 @@ class Maps:
         pigs_to_remove = []
         blocks_to_remove = []
 
-        score_text = interface.Label(50, 10, 100, 50, None, self.color['background'])
-        score_text.add_text("SCORE: " + str(self.score), 25, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        score_text = interface.Label(283, 50, 200, 50, None, self.color['background'])
+        score_text.add_text("ҰПАЙ : " + str(self.score), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        birds_remaining = interface.Label(120, 50, 100, 50, None, self.color['background'])
-        birds_remaining.add_text("BIRDS REMAINING: " + str(len(birds)), 25, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        birds_remaining = interface.Label(201, 110, 100, 50, None, self.color['background'])
+        birds_remaining.add_text("Қалған алмалар : " + str(len(birds)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        pigs_remaining = interface.Label(110, 90, 100, 50, None, self.color['background'])
-        pigs_remaining.add_text("PIGS REMAINING: " + str(len(pigs)), 25, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        pigs_remaining = interface.Label(199, 170, 100, 50, None, self.color['background'])
+        pigs_remaining.add_text("Қалған терезелер : " + str(len(pigs)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
 
       
         while loop:
@@ -588,13 +588,13 @@ class Maps:
             for wall in walls:
                 wall.draw()
 
-            score_text.add_text("SCORE: " + str(self.score), 25, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+            score_text.add_text("ҰПАЙ : " + str(self.score), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
             score_text.draw()
 
-            birds_remaining.add_text("BIRDS REMAINING: " + str(len(birds)), 25, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+            birds_remaining.add_text("Қалған алмалар : " + str(len(birds)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
             birds_remaining.draw()
 
-            pigs_remaining.add_text("PIGS REMAINING: " + str(len(pigs)), 25, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+            pigs_remaining.add_text("Қалған терезелер : " + str(len(pigs)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
             pigs_remaining.draw()
 
     
