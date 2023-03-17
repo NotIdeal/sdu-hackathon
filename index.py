@@ -9,8 +9,8 @@ import interface
 
 pygame.init()
 pygame.display.set_caption('Beimaral Aigyr CITY')
-width = 1500
-height = 700
+width = 1600
+height = 1200
 display = pygame.display.set_mode((width, height))
 clock = pygame.time.Clock()
 
@@ -31,14 +31,17 @@ def start_game(map):
 def GAME():
     map = maps.Maps()
 
-    welcome = interface.Label(700, 100, 400, 200, None, background)
-    welcome.add_text("ANGRY BIRD GAME", 80, "Fonts/arfmoochikncheez.ttf", (236, 240, 241))
+    welcome = interface.Label(600, 350, 400, 200, None, background)
+    welcome.add_text("Беймарал Айғыр Ойыны", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-    start = interface.Button(500, 400, 300, 100, start_game, (244, 208, 63), (247, 220, 111))
-    start.add_text("START GAME", 60, "Fonts/arfmoochikncheez.ttf", background)
+    start = interface.Button(300, 600, 400, 150, start_game, (0, 255, 127), (144, 220, 144))
+    start.add_text("Бастау", 60, "Fonts/Capture_it.ttf", background)
 
-    exit = interface.Button(1000, 400, 300, 100, close, (241, 148, 138), (245, 183, 177))
-    exit.add_text("QUIT", 60, "Fonts/arfmoochikncheez.ttf", background)
+    exit = interface.Button(900, 600, 400, 150, close, (220, 20, 60), (245, 183, 177))
+    exit.add_text("Шығу", 60, "Fonts/Capture_it.ttf", background)
+
+    story = interface.Button(600, 800, 400, 150, None, (240, 100, 240), (216, 191, 216))
+    story.add_text("Кіріспе", 60, "Fonts/Capture_it.ttf", background)
 
     while True:
         for event in pygame.event.get():
@@ -58,6 +61,7 @@ def GAME():
 
         start.draw()
         exit.draw()
+        story.draw()
         welcome.draw()
 
         pygame.display.update()
