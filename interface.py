@@ -4,9 +4,11 @@ import sys
 pygame.init()
 display = None
 
+
 def init(screen):
     global display
     display = screen
+
 
 class Button:
     def __init__(self, x, y, w, h, action=None, colorNotActive=(189, 195, 199), colorActive=None):
@@ -29,7 +31,7 @@ class Button:
         self.text = self.font.render(text, True, text_color)
         self.text_pos = self.text.get_rect()
 
-        self.text_pos.center = (self.x + self.w/2, self.y + self.h/2)
+        self.text_pos.center = (self.x + self.w / 2, self.y + self.h / 2)
 
     def draw(self):
         if self.isActive():
@@ -48,6 +50,7 @@ class Button:
             return True
         else:
             return False
+
 
 class Label(Button):
     def draw(self):

@@ -21,15 +21,19 @@ interface.init(display)
 
 background = (51, 51, 51)
 
+
 def close():
     pygame.quit()
     sys.exit()
 
+
 def start_game(map):
     map.draw_map()
 
+
 def show_into():
     pass
+
 
 def GAME():
     map = maps.Maps()
@@ -69,5 +73,6 @@ def GAME():
 
         pygame.display.update()
         clock.tick(60)
+
 
 GAME()
