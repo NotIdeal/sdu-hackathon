@@ -11,7 +11,7 @@ height = None
 display = None
 clock = pygame.time.Clock()
 
-ground = 50
+ground = 200
 
 d_velocity = 2.0
 
