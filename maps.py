@@ -73,16 +73,16 @@ class Maps:
 
     def pause(self):
         pause_text = interface.Label(700, 200, 400, 200, None, self.color['background'])
-        pause_text.add_text("GAME PAUSED", 70, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        pause_text.add_text("GAME PAUSED", 70, "Fonts/Capture_it.ttf", (236, 240, 241))
 
         replay = interface.Button(350, 500, 300, 100, self.draw_map, (244, 208, 63), (247, 220, 111))
-        replay.add_text("RESTART", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+        replay.add_text("RESTART", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         resume = interface.Button(750, 500, 300, 100, None, (88, 214, 141), (171, 235, 198))
-        resume.add_text("RESUME", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+        resume.add_text("RESUME", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         exit = interface.Button(1150, 500, 300, 100, close, (241, 148, 138), (245, 183, 177))
-        exit.add_text("QUIT", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+        exit.add_text("QUIT", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
     
         while True:
@@ -334,25 +334,25 @@ class Maps:
 
         level_cleared_text = interface.Label(700, 100, 400, 200, None, self.color['background'])
         if self.level <= self.max_level:
-            level_cleared_text.add_text("LEVEL " + str(self.level - 1) + " CLEARED!", 80, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+            level_cleared_text.add_text("LEVEL " + str(self.level - 1) + " CLEARED!", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
         else:
-            level_cleared_text.add_text("ALL LEVEL CLEARED!", 80, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+            level_cleared_text.add_text("ALL LEVEL CLEARED!", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
 
         score_text = interface.Label(750, 300, 300, 100, None, self.color['background'])
-        score_text.add_text("ҰПАЙ: " + str(self.score), 55, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        score_text.add_text("ҰПАЙ: " + str(self.score), 55, "Fonts/Capture_it.ttf", (236, 240, 241))
 
         replay = interface.Button(350, 500, 300, 100, self.replay_level, (244, 208, 63), (247, 220, 111))
-        replay.add_text("PLAY AGAIN", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+        replay.add_text("PLAY AGAIN", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         if self.level <= self.max_level:
             next = interface.Button(750, 500, 300, 100, self.draw_map, (88, 214, 141), (171, 235, 198))
-            next.add_text("CONTINUE", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+            next.add_text("CONTINUE", 60, "Fonts/Capture_it.ttf", self.color['background'])
         else:
             next = interface.Button(750, 500, 300, 100, self.start_again, (88, 214, 141), (171, 235, 198))
-            next.add_text("START AGAIN", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+            next.add_text("START AGAIN", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         exit = interface.Button(1150, 500, 300, 100, close, (241, 148, 138), (245, 183, 177))
-        exit.add_text("QUIT", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+        exit.add_text("QUIT", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         while True:
             for event in pygame.event.get():
@@ -381,16 +381,16 @@ class Maps:
 
     def level_failed(self):
         level_failed_text = interface.Label(700, 100, 400, 200, None, self.color['background'])
-        level_failed_text.add_text("LEVEL FAILED!", 80, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        level_failed_text.add_text("LEVEL FAILED!", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
 
         score_text = interface.Label(750, 300, 300, 100, None, self.color['background'])
-        score_text.add_text("ҰПАЙ: " + str(self.score), 55, "Fonts/Comic_Kings.ttf", (236, 240, 241))
+        score_text.add_text("ҰПАЙ: " + str(self.score), 55, "Fonts/Capture_it.ttf", (236, 240, 241))
 
         replay = interface.Button(500, 500, 300, 100, self.draw_map, (244, 208, 63), (247, 220, 111))
-        replay.add_text("TRY AGAIN", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+        replay.add_text("TRY AGAIN", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         exit = interface.Button(1000, 500, 300, 100, close, (241, 148, 138), (245, 183, 177))
-        exit.add_text("QUIT", 60, "Fonts/arfmoochikncheez.ttf", self.color['background'])
+        exit.add_text("QUIT", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
      
         while True:
