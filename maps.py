@@ -24,13 +24,13 @@ def init(screen):
     interface.init(display)
 
 
-def all_rest(pigs, birds, blocks):
+def all_rest(windows, apples, blocks):
     threshold = 0.15
-    for pig in pigs:
+    for pig in windows:
         if pig.velocity.magnitude >= threshold:
             return False
 
-    for bird in birds:
+    for bird in apples:
         if bird.velocity.magnitude >= threshold:
             return False
 
@@ -49,7 +49,7 @@ def close():
 class Maps:
     def __init__(self):
         self.level = 1
-        self.max_level = 15
+        self.max_level = 5
         self.color = {'background': (51, 51, 51)}
         self.score = 0
 
@@ -67,11 +67,11 @@ class Maps:
 
         return
 
-    def check_win(self, pigs, birds):
-        if pigs == []:
+    def check_win(self, windows, apples):
+        if windows == []:
             print("WON!")
             return True
-        if (not pigs == []) and birds == []:
+        if (not windows == []) and apples == []:
             print("LOST!")
             return False
 
@@ -117,8 +117,8 @@ class Maps:
             clock.tick(60)
 
     def draw_map(self):
-        birds = []
-        pigs = []
+        apples = []
+        windows = []
         blocks = []
         walls = []
         self.score = 0
@@ -126,20 +126,20 @@ class Maps:
         if self.level == 1:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, height - 40, 20))
-            pigs.append(physics_engine.Pig(1500, height - 40, 20))
+            windows.append(physics_engine.Pig(1100, height - 40, 20))
+            windows.append(physics_engine.Pig(1500, height - 40, 20))
 
             blocks.append(physics_engine.Block(1300, height - 60, 60))
 
         elif self.level == 2:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1000, height - 40, 20))
-            pigs.append(physics_engine.Pig(1400, height - 40, 20))
+            windows.append(physics_engine.Pig(1000, height - 40, 20))
+            windows.append(physics_engine.Pig(1400, height - 40, 20))
 
             blocks.append(physics_engine.Block(1200, height - 60, 60))
             blocks.append(physics_engine.Block(1200, height - 2 * 35, 60))
@@ -148,10 +148,10 @@ class Maps:
         elif self.level == 3:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1200, height - 60, 30))
-            pigs.append(physics_engine.Pig(1300, height - 60, 30))
+            windows.append(physics_engine.Pig(1200, height - 60, 30))
+            windows.append(physics_engine.Pig(1300, height - 60, 30))
 
             blocks.append(physics_engine.Block(1000, height - 100, 100))
             blocks.append(physics_engine.Block(1000, height - 2 * 60, 100))
@@ -161,10 +161,10 @@ class Maps:
         elif self.level == 4:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1200, 500 - 60, 30))
-            pigs.append(physics_engine.Pig(1300, height - 60, 30))
+            windows.append(physics_engine.Pig(1200, 500 - 60, 30))
+            windows.append(physics_engine.Pig(1300, height - 60, 30))
 
             walls.append(objects.Slab(1000, 450, 500, 20))
 
@@ -173,10 +173,10 @@ class Maps:
         elif self.level == 5:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1300, 500 - 60, 25))
-            pigs.append(physics_engine.Pig(1300, height - 60, 25))
+            windows.append(physics_engine.Pig(1300, 500 - 60, 25))
+            windows.append(physics_engine.Pig(1300, height - 60, 25))
 
             walls.append(objects.Slab(500, 400, 100, height - 400))
             walls.append(objects.Slab(1000, 450, 500, 30))
@@ -187,10 +187,10 @@ class Maps:
         elif self.level == 6:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1300, 500 - 60, 25))
-            pigs.append(physics_engine.Pig(1300, height - 60, 25))
+            windows.append(physics_engine.Pig(1300, 500 - 60, 25))
+            windows.append(physics_engine.Pig(1300, height - 60, 25))
 
             walls.append(objects.Slab(1000, 0, 30, 450))
             walls.append(objects.Slab(1000, 450, 500, 30))
@@ -201,11 +201,11 @@ class Maps:
         elif self.level == 7:
             for i in range(4):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, 500 - 60, 25))
-            pigs.append(physics_engine.Pig(1300, 500 - 60, 25))
-            pigs.append(physics_engine.Pig(1200, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, 500 - 60, 25))
+            windows.append(physics_engine.Pig(1300, 500 - 60, 25))
+            windows.append(physics_engine.Pig(1200, height - 60, 25))
 
             walls.append(objects.Slab(1200, 250, 30, 200))
             walls.append(objects.Slab(1000, 450, 500, 30))
@@ -213,20 +213,20 @@ class Maps:
         elif self.level == 8:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, height - 60, 25))
-            pigs.append(physics_engine.Pig(1200, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, height - 60, 25))
+            windows.append(physics_engine.Pig(1200, height - 60, 25))
 
             walls.append(objects.Slab(700, 250, 30, height - 250))
 
         elif self.level == 9:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, height - 60, 25))
-            pigs.append(physics_engine.Pig(1450, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, height - 60, 25))
+            windows.append(physics_engine.Pig(1450, height - 60, 25))
 
             blocks.append(physics_engine.Block(1250, height - 100, 100))
             blocks.append(physics_engine.Block(1250, height - 2 * 60, 100))
@@ -236,10 +236,10 @@ class Maps:
         elif self.level == 10:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, height - 60, 25))
-            pigs.append(physics_engine.Pig(1450, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, height - 60, 25))
+            windows.append(physics_engine.Pig(1450, height - 60, 25))
 
             blocks.append(physics_engine.Block(1250, height - 100, 100))
             blocks.append(physics_engine.Block(1250, height - 2 * 60, 100))
@@ -250,10 +250,10 @@ class Maps:
         elif self.level == 11:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, height - 60, 25))
-            pigs.append(physics_engine.Pig(1450, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, height - 60, 25))
+            windows.append(physics_engine.Pig(1450, height - 60, 25))
 
             blocks.append(physics_engine.Block(1250, height - 100, 100))
             blocks.append(physics_engine.Block(1250, height - 2 * 60, 100))
@@ -264,10 +264,10 @@ class Maps:
         elif self.level == 12:
             for i in range(3):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, height - 60, 25))
-            pigs.append(physics_engine.Pig(1450, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, height - 60, 25))
+            windows.append(physics_engine.Pig(1450, height - 60, 25))
 
             walls.append(objects.Slab(900, 400, 500, 30))
             walls.append(objects.Slab(1200, 500, 30, height - 500))
@@ -275,11 +275,11 @@ class Maps:
         elif self.level == 13:
             for i in range(4):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, height - 60, 25))
-            pigs.append(physics_engine.Pig(1200, 400 - 60, 25))
-            pigs.append(physics_engine.Pig(1450, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, height - 60, 25))
+            windows.append(physics_engine.Pig(1200, 400 - 60, 25))
+            windows.append(physics_engine.Pig(1450, height - 60, 25))
 
             blocks.append(physics_engine.Block(900, height - 100, 100))
             blocks.append(physics_engine.Block(900, height - 2 * 60, 100))
@@ -290,11 +290,11 @@ class Maps:
         elif self.level == 14:
             for i in range(4):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(1100, height - 60, 25))
-            pigs.append(physics_engine.Pig(1100, 400 - 60, 25))
-            pigs.append(physics_engine.Pig(1450, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, height - 60, 25))
+            windows.append(physics_engine.Pig(1100, 400 - 60, 25))
+            windows.append(physics_engine.Pig(1450, height - 60, 25))
 
             blocks.append(physics_engine.Block(900, height - 100, 100))
 
@@ -306,11 +306,11 @@ class Maps:
         elif self.level == 15:
             for i in range(5):
                 new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
-                birds.append(new_bird)
+                apples.append(new_bird)
 
-            pigs.append(physics_engine.Pig(900, height - 60, 25))
-            pigs.append(physics_engine.Pig(width - 400, 400 - 60, 25))
-            pigs.append(physics_engine.Pig(1700, height - 60, 25))
+            windows.append(physics_engine.Pig(900, height - 60, 25))
+            windows.append(physics_engine.Pig(width - 400, 400 - 60, 25))
+            windows.append(physics_engine.Pig(1700, height - 60, 25))
 
             walls.append(objects.Slab(800, 400, 30, height - 400))
             walls.append(objects.Slab(1000, 500, 30, height - 500))
@@ -318,7 +318,7 @@ class Maps:
             walls.append(objects.Slab(width - 500, 400, 500, 40))
             walls.append(objects.Slab(width - 500, 150, 60, 400 - 150))
 
-        self.start_level(birds, pigs, blocks, walls)
+        self.start_level(apples, windows, blocks, walls)
 
     def replay_level(self):
         self.level -= 1
@@ -414,27 +414,27 @@ class Maps:
             pygame.display.update()
             clock.tick(60)
 
-    def start_level(self, birds, pigs, blocks, walls):
+    def start_level(self, apples, windows, blocks, walls):
         loop = True
 
         slingshot = physics_engine.Slingshot(250, height - 200, 30, 200)
 
-        birds[0].load(slingshot)
+        apples[0].load(slingshot)
 
         mouse_click = False
         flag = 1
 
-        pigs_to_remove = []
+        windows_to_remove = []
         blocks_to_remove = []
 
         score_text = interface.Label(283, 50, 200, 50, None, self.color['background'])
         score_text.add_text("ҰПАЙ : " + str(self.score), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        birds_remaining = interface.Label(201, 110, 100, 50, None, self.color['background'])
-        birds_remaining.add_text("Қалған алмалар : " + str(len(birds)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
+        apples_remaining = interface.Label(201, 110, 100, 50, None, self.color['background'])
+        apples_remaining.add_text("Қалған алмалар : " + str(len(apples)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        pigs_remaining = interface.Label(199, 170, 100, 50, None, self.color['background'])
-        pigs_remaining.add_text("Қалған терезелер : " + str(len(pigs)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
+        windows_remaining = interface.Label(199, 170, 100, 50, None, self.color['background'])
+        windows_remaining.add_text("Қалған терезелер : " + str(len(windows)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
 
         while loop:
             for event in pygame.event.get():
@@ -451,31 +451,31 @@ class Maps:
                         self.pause()
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
-                    if birds[0].mouse_selected():
+                    if apples[0].mouse_selected():
                         mouse_click = True
                 if event.type == pygame.MOUSEBUTTONUP:
                     mouse_click = False
-                    if birds[0].mouse_selected():
+                    if apples[0].mouse_selected():
                         flag = 0
 
-            if (not birds[0].loaded) and all_rest(pigs, birds, blocks):
+            if (not apples[0].loaded) and all_rest(windows, apples, blocks):
                 print("LOADED!")
-                birds.pop(0)
-                if self.check_win(pigs, birds) == 1:
-                    self.score += len(birds) * 100
+                apples.pop(0)
+                if self.check_win(windows, apples) == 1:
+                    self.score += len(apples) * 100
                     self.level_cleared()
-                elif self.check_win(pigs, birds) == 0:
+                elif self.check_win(windows, apples) == 0:
                     self.level_failed()
 
-                if not birds == []:
-                    birds[0].load(slingshot)
+                if not apples == []:
+                    apples[0].load(slingshot)
                 flag = 1
 
             if mouse_click:
-                birds[0].reposition(slingshot, mouse_click)
+                apples[0].reposition(slingshot, mouse_click)
 
             if not flag:
-                birds[0].unload()
+                apples[0].unload()
 
             # display.fill(self.color['background'])
             color = self.color['background']
@@ -485,80 +485,80 @@ class Maps:
 
             pygame.draw.rect(display, (77, 86, 86), (0, height, width, 50))
 
-            slingshot.draw(birds[0])
+            slingshot.draw(apples[0])
 
-            for i in range(len(pigs)):
+            for i in range(len(windows)):
                 for j in range(len(blocks)):
-                    pig_v, block_v = pigs[i].velocity.magnitude, blocks[j].velocity.magnitude
-                    pigs[i], blocks[j], result_block_pig = physics_engine.collision_handler(pigs[i], blocks[j],
+                    pig_v, block_v = windows[i].velocity.magnitude, blocks[j].velocity.magnitude
+                    windows[i], blocks[j], result_block_pig = physics_engine.collision_handler(windows[i], blocks[j],
                                                                                             "BALL_N_BLOCK")
-                    pig_v1, block_v1 = pigs[i].velocity.magnitude, blocks[j].velocity.magnitude
+                    pig_v1, block_v1 = windows[i].velocity.magnitude, blocks[j].velocity.magnitude
 
                     if result_block_pig:
                         if abs(pig_v - pig_v1) > d_velocity:
                             blocks_to_remove.append(blocks[j])
                             blocks[j].destroy()
                         if abs(block_v - block_v1) > d_velocity:
-                            pigs_to_remove.append(pigs[i])
-                            pigs[i].dead()
+                            windows_to_remove.append(windows[i])
+                            windows[i].dead()
 
-            for i in range(len(birds)):
-                if not (birds[i].loaded or birds[i].velocity.magnitude == 0):
+            for i in range(len(apples)):
+                if not (apples[i].loaded or apples[i].velocity.magnitude == 0):
                     for j in range(len(blocks)):
-                        birds_v, block_v = birds[i].velocity.magnitude, blocks[j].velocity.magnitude
-                        birds[i], blocks[j], result_bird_block = physics_engine.collision_handler(birds[i], blocks[j],
+                        apples_v, block_v = apples[i].velocity.magnitude, blocks[j].velocity.magnitude
+                        apples[i], blocks[j], result_bird_block = physics_engine.collision_handler(apples[i], blocks[j],
                                                                                                   "BALL_N_BLOCK")
-                        birds_v1, block_v1 = birds[i].velocity.magnitude, blocks[j].velocity.magnitude
+                        apples_v1, block_v1 = apples[i].velocity.magnitude, blocks[j].velocity.magnitude
 
                         if result_bird_block:
-                            if abs(birds_v - birds_v1) > d_velocity:
+                            if abs(apples_v - apples_v1) > d_velocity:
                                 if not blocks[j] in blocks_to_remove:
                                     blocks_to_remove.append(blocks[j])
                                     blocks[j].destroy()
 
-            for i in range(len(pigs)):
-                pigs[i].move()
-                for j in range(i + 1, len(pigs)):
-                    pig1_v, pig2_v = pigs[i].velocity.magnitude, pigs[j].velocity.magnitude
-                    pigs[i], pigs[j], result = physics_engine.collision_handler(pigs[i], pigs[j], "BALL")
-                    pig1_v1, pig2_v1 = pigs[i].velocity.magnitude, pigs[j].velocity.magnitude
+            for i in range(len(windows)):
+                windows[i].move()
+                for j in range(i + 1, len(windows)):
+                    pig1_v, pig2_v = windows[i].velocity.magnitude, windows[j].velocity.magnitude
+                    windows[i], windows[j], result = physics_engine.collision_handler(windows[i], windows[j], "BALL")
+                    pig1_v1, pig2_v1 = windows[i].velocity.magnitude, windows[j].velocity.magnitude
                     result = True
                     if result:
                         if abs(pig1_v - pig1_v1) > d_velocity:
-                            if not pigs[j] in pigs_to_remove:
-                                pigs_to_remove.append(pigs[j])
-                                pigs[j].dead()
+                            if not windows[j] in windows_to_remove:
+                                windows_to_remove.append(windows[j])
+                                windows[j].dead()
                         if abs(pig2_v - pig2_v1) > d_velocity:
-                            if not pigs[i] in pigs_to_remove:
-                                pigs_to_remove.append(pigs[i])
-                                pigs[i].dead()
+                            if not windows[i] in windows_to_remove:
+                                windows_to_remove.append(windows[i])
+                                windows[i].dead()
 
                 for wall in walls:
-                    pigs[i] = wall.collision_manager(pigs[i])
+                    windows[i] = wall.collision_manager(windows[i])
 
-                pigs[i].draw()
+                windows[i].draw()
 
-            for i in range(len(birds)):
-                if (not birds[i].loaded) and birds[i].velocity.magnitude:
-                    birds[0].move()
-                    for j in range(len(pigs)):
-                        bird_v, pig_v = birds[i].velocity.magnitude, pigs[j].velocity.magnitude
-                        birds[i], pigs[j], result_bird_pig = physics_engine.collision_handler(birds[i], pigs[j], "BALL")
-                        bird_v1, pig_v1 = birds[i].velocity.magnitude, pigs[j].velocity.magnitude
+            for i in range(len(apples)):
+                if (not apples[i].loaded) and apples[i].velocity.magnitude:
+                    apples[0].move()
+                    for j in range(len(windows)):
+                        bird_v, pig_v = apples[i].velocity.magnitude, windows[j].velocity.magnitude
+                        apples[i], windows[j], result_bird_pig = physics_engine.collision_handler(apples[i], windows[j], "BALL")
+                        bird_v1, pig_v1 = apples[i].velocity.magnitude, windows[j].velocity.magnitude
                         result = True
                         if result_bird_pig:
                             if abs(bird_v - bird_v1) > d_velocity:
-                                if not pigs[j] in pigs_to_remove:
-                                    pigs_to_remove.append(pigs[j])
-                                    pigs[j].dead()
+                                if not windows[j] in windows_to_remove:
+                                    windows_to_remove.append(windows[j])
+                                    windows[j].dead()
 
-                if birds[i].loaded:
-                    birds[i].project_path()
+                if apples[i].loaded:
+                    apples[i].project_path()
 
                 for wall in walls:
-                    birds[i] = wall.collision_manager(birds[i])
+                    apples[i] = wall.collision_manager(apples[i])
 
-                birds[i].draw()
+                apples[i].draw()
 
             for i in range(len(blocks)):
                 for j in range(i + 1, len(blocks)):
@@ -589,18 +589,18 @@ class Maps:
             score_text.add_text("ҰПАЙ : " + str(self.score), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
             score_text.draw()
 
-            birds_remaining.add_text("Қалған алмалар : " + str(len(birds)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
-            birds_remaining.draw()
+            apples_remaining.add_text("Қалған алмалар : " + str(len(apples)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
+            apples_remaining.draw()
 
-            pigs_remaining.add_text("Қалған терезелер : " + str(len(pigs)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
-            pigs_remaining.draw()
+            windows_remaining.add_text("Қалған терезелер : " + str(len(windows)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
+            windows_remaining.draw()
 
             pygame.display.update()
 
-            if all_rest(pigs, birds, blocks):
-                for pig in pigs_to_remove:
-                    if pig in pigs:
-                        pigs.remove(pig)
+            if all_rest(windows, apples, blocks):
+                for pig in windows_to_remove:
+                    if pig in windows:
+                        windows.remove(pig)
                         self.score += 100
 
                 for block in blocks_to_remove:
@@ -608,7 +608,7 @@ class Maps:
                         blocks.remove(block)
                         self.score += 50
 
-                pigs_to_remove = []
+                windows_to_remove = []
                 blocks_to_remove = []
 
             clock.tick(60)
