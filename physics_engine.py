@@ -54,7 +54,7 @@ class Window:
 
         self.broken_window = pygame.image.load("Images/windowAfter2.png")
 
-        self.apple_image = pygame.image.load("Images/bird.png")
+        self.apple_image = pygame.image.load("Images/apple.png")
 
         if type == "WINDOW":
             self.image = self.window_image

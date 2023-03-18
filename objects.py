@@ -27,9 +27,9 @@ class Slab:
         self.h = h
 
         if self.w > self.h:
-            self.image = pygame.image.load("Images/wall_horizontal.png")
+            self.image = pygame.image.load("Images/brick.png")
         else:
-            self.image = pygame.image.load("Images/wall_vertical.png")
+            self.image = pygame.image.load("Images/brick.png")
 
         self.image = pygame.transform.scale(self.image, (self.w, self.h))
 
