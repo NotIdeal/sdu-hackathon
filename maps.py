@@ -112,7 +112,7 @@ class Maps:
             new_apple = physics_engine.Apple(40 * i + 10 * i, height - 40, 30, None, "APPLE")
             apples.append(new_apple)
 
-        if self.level == 0:
+        if self.level == 1:
             windows.append(physics_engine.Window(1400, height - 40, ground_level))
         if self.level == 2:
             windows.append(physics_engine.Window(1100, height - 40, ground_level))
@@ -120,22 +120,22 @@ class Maps:
 
             blocks.append(physics_engine.Block(1300, height - 60, 60))
         elif self.level == 3:
-            windows.append(physics_engine.Window(1000, height - ground_level, 20))
-            windows.append(physics_engine.Window(1400, height - ground_level, 20))
+            windows.append(physics_engine.Window(1000, height - ground_level, ground_level))
+            windows.append(physics_engine.Window(1400, height - ground_level, ground_level))
 
             blocks.append(physics_engine.Block(1200, height - 60, 60))
             blocks.append(physics_engine.Block(1200, height - 2 * 35, 60))
             blocks.append(physics_engine.Block(1500, height - 60, 60))
         elif self.level == 4:
-            windows.append(physics_engine.Window(1200, 500 - 60, 30))
-            windows.append(physics_engine.Window(1300, height - 60, 30))
+            windows.append(physics_engine.Window(1200, 400, ground_level))
+            windows.append(physics_engine.Window(1300, height - ground_level, ground_level))
 
             walls.append(objects.Slab(1000, 450, 500, 20))
 
             blocks.append(physics_engine.Block(1100, height - 100, 100))
-        elif self.level == 1:
-            windows.append(physics_engine.Window(1300, 500 - 60, 25))
-            windows.append(physics_engine.Window(1300, height - 60, 25))
+        elif self.level == 5:
+            windows.append(physics_engine.Window(1300, 400, ground_level))
+            windows.append(physics_engine.Window(1300, height - ground_level, ground_level))
 
             walls.append(objects.Slab(500, 640, 100, height / 4))
             walls.append(objects.Slab(1000, 450, 500, 30))
@@ -143,34 +143,35 @@ class Maps:
             blocks.append(physics_engine.Block(1150, 500 - 100, 100))
             blocks.append(physics_engine.Block(1100, height - 100, 100))
         elif self.level == 6:
-            apples.append(physics_engine.Apple(180, height - ground_level, 20, None, "APPLE"))
+            apples.append(physics_engine.Apple(160, height - 30, 40, None, "APPLE"))
 
-            windows.append(physics_engine.Window(1100, 500 - 60, 25))
-            windows.append(physics_engine.Window(1300, 500 - 60, 25))
-            windows.append(physics_engine.Window(1200, height - 60, 25))
+            windows.append(physics_engine.Window(1100, 400, ground_level))
+            windows.append(physics_engine.Window(1300, 400, ground_level))
+            windows.append(physics_engine.Window(1200, height - ground_level, ground_level))
 
             walls.append(objects.Slab(1200, 250, 30, 200))
             walls.append(objects.Slab(1000, 450, 500, 30))
         elif self.level == 7:
-            windows.append(physics_engine.Window(1100, height - 60, 25))
-            windows.append(physics_engine.Window(1200, height - 60, 25))
+            windows.append(physics_engine.Window(1100, height - ground_level, ground_level))
+            windows.append(physics_engine.Window(1200, height - ground_level, ground_level))
 
             walls.append(objects.Slab(700, 250, 30, height - 250))
         elif self.level == 8:
-            windows.append(physics_engine.Window(1100, height - 60, 25))
-            windows.append(physics_engine.Window(1450, height - 60, 25))
+            windows.append(physics_engine.Window(1100, height - ground_level, ground_level))
+            windows.append(physics_engine.Window(1450, height - ground_level, ground_level))
 
             blocks.append(physics_engine.Block(1250, height - 100, 100))
             blocks.append(physics_engine.Block(1250, height - 2 * 60, 100))
 
             walls.append(objects.Slab(700, 400, 30, height - 400))
         elif self.level == 9:
-            windows.append(physics_engine.Window(1100, height - 60, 25))
-            windows.append(physics_engine.Window(1450, height - 60, 25))
+            windows.append(physics_engine.Window(1100, height - ground_level, ground_level))
+            windows.append(physics_engine.Window(1450, height - ground_level, ground_level))
 
             blocks.append(physics_engine.Block(1250, height - 100, 100))
-            blocks.append(physics_engine.Block(1250, height - 2 * 60, 100))
+            blocks.append(physics_engine.Block(1250, height - 120, 100))
             blocks.append(physics_engine.Block(900, height - 100, 100))
+            blocks.append(physics_engine.Block(900, height - 120, 100))
 
             walls.append(objects.Slab(900, 400, 500, 30))
 
