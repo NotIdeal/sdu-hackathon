@@ -24,9 +24,48 @@ def close():
     pygame.quit()
     sys.exit()
 
-
-def start_game(map):
+def start_level(apples):
+    map = maps.Maps(apples)
     map.draw_map()
+def start_game():
+    welcome = interface.Label(600, 180, 400, 200, None, background)
+    welcome.add_text("Қиындықты таңдаңыз", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
+
+    ez = interface.Button(200, 400, 300, 150, start_level, (0, 255, 127), (144, 220, 144))
+    ez.add_text("Оңай", 60, "Fonts/Capture_it.ttf", background)
+
+    medium = interface.Button(600, 400, 300, 150, start_level, (240, 100, 240), (216, 191, 216))
+    medium.add_text("Орташа", 60, "Fonts/Capture_it.ttf", background)
+
+    hard = interface.Button(1000, 400, 300, 150, start_level, (220, 20, 60), (245, 183, 177))
+    hard.add_text("Қиын", 60, "Fonts/Capture_it.ttf", background)
+
+
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                close()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    return
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if ez.isActive():
+                    start_level(4)
+                if medium.isActive():
+                    start_level(3)
+                if hard.isActive():
+                    start_level(2)
+
+
+        display.fill((51, 51, 51))
+        welcome.draw()
+        ez.draw()
+        medium.draw()
+        hard.draw()
+
+        pygame.display.update()
+        clock.tick(60)
 
 
 def show_intro():
@@ -97,8 +136,6 @@ def show_intro():
 
 
 def GAME():
-    map = maps.Maps()
-
     welcome = interface.Label(600, 180, 400, 200, None, background)
     welcome.add_text("Беймарал Айғыр Ойыны", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
 
@@ -123,7 +160,7 @@ def GAME():
                 if exit.isActive():
                     exit.action()
                 if start.isActive():
-                    start_game(map)
+                    start_game()
                 if story.isActive():
                     show_intro()
 
