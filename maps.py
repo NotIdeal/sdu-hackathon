@@ -49,7 +49,7 @@ def close():
 class Maps:
     def __init__(self):
         self.level = 1
-        self.max_level = 5
+        self.max_level = 15
         self.color = {'background': (51, 51, 51)}
         self.score = 0
 
@@ -107,85 +107,42 @@ class Maps:
         walls = []
         self.score = 0
 
-        if self.level == 1:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
+        for i in range(3):
+            new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+            apples.append(new_apple)
 
+        if self.level == 1:
+            windows.append(physics_engine.Window(1400, height - 40, 20))
+        if self.level == 2:
             windows.append(physics_engine.Window(1100, height - 40, 20))
             windows.append(physics_engine.Window(1500, height - 40, 20))
 
             blocks.append(physics_engine.Block(1300, height - 60, 60))
-
-        elif self.level == 2:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
-                apples.append(new_apple)
-
+        elif self.level == 3:
             windows.append(physics_engine.Window(1000, height - 40, 20))
             windows.append(physics_engine.Window(1400, height - 40, 20))
 
             blocks.append(physics_engine.Block(1200, height - 60, 60))
             blocks.append(physics_engine.Block(1200, height - 2 * 35, 60))
             blocks.append(physics_engine.Block(1500, height - 60, 60))
-
-        elif self.level == 3:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
-            windows.append(physics_engine.Window(1200, height - 60, 30))
-            windows.append(physics_engine.Window(1300, height - 60, 30))
-
-            blocks.append(physics_engine.Block(1000, height - 100, 100))
-            blocks.append(physics_engine.Block(1000, height - 2 * 60, 100))
-            blocks.append(physics_engine.Block(1500, height - 100, 100))
-            blocks.append(physics_engine.Block(1500, height - 2 * 60, 100))
-
         elif self.level == 4:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
             windows.append(physics_engine.Window(1200, 500 - 60, 30))
             windows.append(physics_engine.Window(1300, height - 60, 30))
 
             walls.append(objects.Slab(1000, 450, 500, 20))
 
             blocks.append(physics_engine.Block(1100, height - 100, 100))
-
         elif self.level == 5:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
             windows.append(physics_engine.Window(1300, 500 - 60, 25))
             windows.append(physics_engine.Window(1300, height - 60, 25))
 
-            walls.append(objects.Slab(500, 400, 100, height - 400))
+            walls.append(objects.Slab(500, 640, 100, height / 4))
             walls.append(objects.Slab(1000, 450, 500, 30))
 
             blocks.append(physics_engine.Block(1150, 500 - 100, 100))
             blocks.append(physics_engine.Block(1100, height - 100, 100))
-
         elif self.level == 6:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
-            windows.append(physics_engine.Window(1300, 500 - 60, 25))
-            windows.append(physics_engine.Window(1300, height - 60, 25))
-
-            walls.append(objects.Slab(1000, 0, 30, 450))
-            walls.append(objects.Slab(1000, 450, 500, 30))
-
-            blocks.append(physics_engine.Block(1150, 500 - 100, 100))
-            blocks.append(physics_engine.Block(1100, height - 100, 100))
-
-        elif self.level == 7:
-            for i in range(4):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
+            apples.append(physics_engine.Apple(180, height - 40, 20, None, "APPLE"))
 
             windows.append(physics_engine.Window(1100, 500 - 60, 25))
             windows.append(physics_engine.Window(1300, 500 - 60, 25))
@@ -193,22 +150,12 @@ class Maps:
 
             walls.append(objects.Slab(1200, 250, 30, 200))
             walls.append(objects.Slab(1000, 450, 500, 30))
-
-        elif self.level == 8:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
+        elif self.level == 7:
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1200, height - 60, 25))
 
             walls.append(objects.Slab(700, 250, 30, height - 250))
-
-        elif self.level == 9:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
+        elif self.level == 8:
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1450, height - 60, 25))
 
@@ -216,12 +163,7 @@ class Maps:
             blocks.append(physics_engine.Block(1250, height - 2 * 60, 100))
 
             walls.append(objects.Slab(700, 400, 30, height - 400))
-
-        elif self.level == 10:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
+        elif self.level == 9:
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1450, height - 60, 25))
 
@@ -230,80 +172,8 @@ class Maps:
             blocks.append(physics_engine.Block(900, height - 100, 100))
 
             walls.append(objects.Slab(900, 400, 500, 30))
-
-        elif self.level == 11:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
-            windows.append(physics_engine.Window(1100, height - 60, 25))
-            windows.append(physics_engine.Window(1450, height - 60, 25))
-
-            blocks.append(physics_engine.Block(1250, height - 100, 100))
-            blocks.append(physics_engine.Block(1250, height - 2 * 60, 100))
-
-            walls.append(objects.Slab(900, 400, 500, 30))
-            walls.append(objects.Slab(900, 400, 30, height - 400))
-
-        elif self.level == 12:
-            for i in range(3):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
-            windows.append(physics_engine.Window(1100, height - 60, 25))
-            windows.append(physics_engine.Window(1450, height - 60, 25))
-
-            walls.append(objects.Slab(900, 400, 500, 30))
-            walls.append(objects.Slab(1200, 500, 30, height - 500))
-
-        elif self.level == 13:
-            for i in range(4):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
-            windows.append(physics_engine.Window(1100, height - 60, 25))
-            windows.append(physics_engine.Window(1200, 400 - 60, 25))
-            windows.append(physics_engine.Window(1450, height - 60, 25))
-
-            blocks.append(physics_engine.Block(900, height - 100, 100))
-            blocks.append(physics_engine.Block(900, height - 2 * 60, 100))
-
-            walls.append(objects.Slab(900, 400, 500, 40))
-            walls.append(objects.Slab(1200, 500, 30, height - 500))
-
-        elif self.level == 14:
-            for i in range(4):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
-            windows.append(physics_engine.Window(1100, height - 60, 25))
-            windows.append(physics_engine.Window(1100, 400 - 60, 25))
-            windows.append(physics_engine.Window(1450, height - 60, 25))
-
-            blocks.append(physics_engine.Block(900, height - 100, 100))
-
-            blocks.append(physics_engine.Block(1300, 400 - 100, 100))
-
-            walls.append(objects.Slab(900, 400, 500, 40))
-            walls.append(objects.Slab(900, 0, 30, 400))
-
-        elif self.level == 15:
-            for i in range(5):
-                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_apple)
-
-            windows.append(physics_engine.Window(900, height - 60, 25))
-            windows.append(physics_engine.Window(width - 400, 400 - 60, 25))
-            windows.append(physics_engine.Window(1700, height - 60, 25))
-
-            walls.append(objects.Slab(800, 400, 30, height - 400))
-            walls.append(objects.Slab(1000, 500, 30, height - 500))
-
-            walls.append(objects.Slab(width - 500, 400, 500, 40))
-            walls.append(objects.Slab(width - 500, 150, 60, 400 - 150))
 
         self.start_level(apples, windows, blocks, walls)
-
     def replay_level(self):
         self.level -= 1
         self.draw_map()
@@ -330,7 +200,7 @@ class Maps:
 
         if self.level <= self.max_level:
             next = interface.Button(900, 500, 500, 100, self.draw_map, (240, 100, 240), (216, 191, 216))
-            next.add_text("Жайлғастыру", 60, "Fonts/Capture_it.ttf", self.color['background'])
+            next.add_text("Жалғастыру", 60, "Fonts/Capture_it.ttf", self.color['background'])
         else:
             next = interface.Button(900, 500, 500, 100, self.start_again, (0, 255, 127), (144, 220, 144))
             next.add_text("Басынан", 60, "Fonts/Capture_it.ttf", self.color['background'])
@@ -416,7 +286,8 @@ class Maps:
         apples_remaining.add_text("Қалған алмалар : " + str(len(apples)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
 
         windows_remaining = interface.Label(199, 170, 100, 50, None, self.color['background'])
-        windows_remaining.add_text("Қалған терезелер : " + str(len(windows)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
+        windows_remaining.add_text("Қалған терезелер : " + str(len(windows)), 40, "Fonts/Capture_it.ttf",
+                                   (236, 240, 241))
 
         while True:
             for event in pygame.event.get():
@@ -466,7 +337,7 @@ class Maps:
                 for j in range(len(blocks)):
                     pig_v, block_v = windows[i].velocity.magnitude, blocks[j].velocity.magnitude
                     windows[i], blocks[j], result_block_pig = physics_engine.collision_handler(windows[i], blocks[j],
-                                                                                            "BALL_N_BLOCK")
+                                                                                               "BALL_N_BLOCK")
                     pig_v1, block_v1 = windows[i].velocity.magnitude, blocks[j].velocity.magnitude
 
                     if result_block_pig:
@@ -482,7 +353,7 @@ class Maps:
                     for j in range(len(blocks)):
                         apples_v, block_v = apples[i].velocity.magnitude, blocks[j].velocity.magnitude
                         apples[i], blocks[j], result_bird_block = physics_engine.collision_handler(apples[i], blocks[j],
-                                                                                                  "BALL_N_BLOCK")
+                                                                                                   "BALL_N_BLOCK")
                         apples_v1, block_v1 = apples[i].velocity.magnitude, blocks[j].velocity.magnitude
 
                         if result_bird_block:
@@ -518,7 +389,8 @@ class Maps:
                     apples[0].move()
                     for j in range(len(windows)):
                         bird_v, pig_v = apples[i].velocity.magnitude, windows[j].velocity.magnitude
-                        apples[i], windows[j], result_bird_pig = physics_engine.collision_handler(apples[i], windows[j], "BALL")
+                        apples[i], windows[j], result_bird_pig = physics_engine.collision_handler(apples[i], windows[j],
+                                                                                                  "BALL")
                         bird_v1, pig_v1 = apples[i].velocity.magnitude, windows[j].velocity.magnitude
                         result = True
                         if result_bird_pig:
@@ -564,10 +436,12 @@ class Maps:
             score_text.add_text("ҰПАЙ : " + str(self.score), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
             score_text.draw()
 
-            apples_remaining.add_text("Қалған алмалар : " + str(len(apples)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
+            apples_remaining.add_text("Қалған алмалар : " + str(len(apples)), 40, "Fonts/Capture_it.ttf",
+                                      (236, 240, 241))
             apples_remaining.draw()
 
-            windows_remaining.add_text("Қалған терезелер : " + str(len(windows)), 40, "Fonts/Capture_it.ttf", (236, 240, 241))
+            windows_remaining.add_text("Қалған терезелер : " + str(len(windows)), 40, "Fonts/Capture_it.ttf",
+                                       (236, 240, 241))
             windows_remaining.draw()
 
             pygame.display.update()
