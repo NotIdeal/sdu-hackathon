@@ -380,17 +380,17 @@ class Maps:
             clock.tick(60)
 
     def level_failed(self):
-        level_failed_text = interface.Label(700, 100, 400, 200, None, self.color['background'])
-        level_failed_text.add_text("LEVEL FAILED!", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
+        level_failed_text = interface.Label(600, 180, 400, 200, None, self.color['background'])
+        level_failed_text.add_text("Деңғей өтілмеді!", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        score_text = interface.Label(750, 300, 300, 100, None, self.color['background'])
+        score_text = interface.Label(650, 350, 300, 100, None, self.color['background'])
         score_text.add_text("ҰПАЙ: " + str(self.score), 55, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        replay = interface.Button(500, 500, 300, 100, self.draw_map, (244, 208, 63), (247, 220, 111))
-        replay.add_text("TRY AGAIN", 60, "Fonts/Capture_it.ttf", self.color['background'])
+        replay = interface.Button(250, 500, 500, 100, self.draw_map, (0, 255, 127), (144, 220, 144))
+        replay.add_text("Қайтадан", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
-        exit = interface.Button(1000, 500, 300, 100, close, (241, 148, 138), (245, 183, 177))
-        exit.add_text("QUIT", 60, "Fonts/Capture_it.ttf", self.color['background'])
+        exit = interface.Button(900, 500, 500, 100, close, (220, 20, 60), (245, 183, 177))
+        exit.add_text("Шығу", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         while True:
             for event in pygame.event.get():
