@@ -41,8 +41,8 @@ elasticity = 0.8
 block_elasticity = 0.7
 
 
-class Pig:
-    def __init__(self, x, y, r, v=None, type="PIG", loaded=False, color=(255, 255, 255)):
+class Window:
+    def __init__(self, x, y, r, v=None, type="WINDOW", loaded=False, color=(255, 255, 255)):
         self.x = x
         self.y = y
         self.r = r
@@ -58,7 +58,7 @@ class Pig:
 
         self.bird_image = pygame.image.load("Images/bird.png")
 
-        if type == "PIG":
+        if type == "WINDOW":
             self.image = random.choice([self.pig1_image, self.pig2_image])
         else:
             self.image = self.bird_image
@@ -74,11 +74,11 @@ class Pig:
     def draw(self):
         self.animate_count += 1
 
-        if self.type == "BIRD" and not self.loaded:
+        if self.type == "APPLE" and not self.loaded:
             for point in self.path:
                 pygame.draw.ellipse(display, self.color, (point[0], point[1], 3, 3), 1)
 
-        if (self.type == "PIG") and (not self.animate_count % 20) and (not self.isDead):
+        if (self.type == "WINDOW") and (not self.animate_count % 20) and (not self.isDead):
             self.image = random.choice([self.pig1_image, self.pig2_image])
 
         display.blit(self.image, (self.x - self.r, self.y - self.r))
@@ -118,7 +118,7 @@ class Pig:
             self.path.append((self.x, self.y))
 
 
-class Bird(Pig):
+class Apple(Window):
     def load(self, slingshot):
         self.x = slingshot.x
         self.y = slingshot.y
@@ -153,7 +153,7 @@ class Bird(Pig):
     def project_path(self):
         if self.loaded:
             path = []
-            ball = Pig(self.x, self.y, self.r, self.velocity, self.type)
+            ball = Window(self.x, self.y, self.r, self.velocity, self.type)
             for i in range(30):
                 ball.move()
                 if i % 5 == 0:
