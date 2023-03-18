@@ -77,10 +77,6 @@ class Maps:
                 if event.type == pygame.QUIT:
                     close()
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_q:
-                        close()
-                    if event.key == pygame.K_p:
-                        return
                     if event.key == pygame.K_ESCAPE:
                         return
 
@@ -214,9 +210,6 @@ class Maps:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     close()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_q:
-                        close()
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if replay.isActive():
@@ -252,9 +245,6 @@ class Maps:
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     close()
-                if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_q:
-                        close()
 
                 if event.type == pygame.MOUSEBUTTONDOWN:
                     if replay.isActive():
