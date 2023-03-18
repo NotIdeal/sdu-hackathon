@@ -109,8 +109,8 @@ class Maps:
 
         if self.level == 1:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, height - 40, 20))
             windows.append(physics_engine.Window(1500, height - 40, 20))
@@ -119,8 +119,8 @@ class Maps:
 
         elif self.level == 2:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1000, height - 40, 20))
             windows.append(physics_engine.Window(1400, height - 40, 20))
@@ -131,8 +131,8 @@ class Maps:
 
         elif self.level == 3:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1200, height - 60, 30))
             windows.append(physics_engine.Window(1300, height - 60, 30))
@@ -144,8 +144,8 @@ class Maps:
 
         elif self.level == 4:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1200, 500 - 60, 30))
             windows.append(physics_engine.Window(1300, height - 60, 30))
@@ -156,8 +156,8 @@ class Maps:
 
         elif self.level == 5:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1300, 500 - 60, 25))
             windows.append(physics_engine.Window(1300, height - 60, 25))
@@ -170,8 +170,8 @@ class Maps:
 
         elif self.level == 6:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1300, 500 - 60, 25))
             windows.append(physics_engine.Window(1300, height - 60, 25))
@@ -184,8 +184,8 @@ class Maps:
 
         elif self.level == 7:
             for i in range(4):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, 500 - 60, 25))
             windows.append(physics_engine.Window(1300, 500 - 60, 25))
@@ -196,8 +196,8 @@ class Maps:
 
         elif self.level == 8:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1200, height - 60, 25))
@@ -206,8 +206,8 @@ class Maps:
 
         elif self.level == 9:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1450, height - 60, 25))
@@ -219,8 +219,8 @@ class Maps:
 
         elif self.level == 10:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1450, height - 60, 25))
@@ -233,8 +233,8 @@ class Maps:
 
         elif self.level == 11:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1450, height - 60, 25))
@@ -247,8 +247,8 @@ class Maps:
 
         elif self.level == 12:
             for i in range(3):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1450, height - 60, 25))
@@ -258,8 +258,8 @@ class Maps:
 
         elif self.level == 13:
             for i in range(4):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1200, 400 - 60, 25))
@@ -273,8 +273,8 @@ class Maps:
 
         elif self.level == 14:
             for i in range(4):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(1100, height - 60, 25))
             windows.append(physics_engine.Window(1100, 400 - 60, 25))
@@ -289,8 +289,8 @@ class Maps:
 
         elif self.level == 15:
             for i in range(5):
-                new_bird = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
-                apples.append(new_bird)
+                new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
+                apples.append(new_apple)
 
             windows.append(physics_engine.Window(900, height - 60, 25))
             windows.append(physics_engine.Window(width - 400, 400 - 60, 25))
