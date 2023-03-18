@@ -80,7 +80,7 @@ class Maps:
         pause_text.add_text("Ойын тоқтатылды", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
 
         replay = interface.Button(250, 400, 500, 100, self.draw_map, (0, 255, 127), (144, 220, 144))
-        replay.add_text("Басынан", 60, "Fonts/Capture_it.ttf", self.color['background'])
+        replay.add_text("Қайтадан", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         resume = interface.Button(900, 400, 500, 100, None, (240, 100, 240), (216, 191, 216))
         resume.add_text("Жалғастыру", 60, "Fonts/Capture_it.ttf", self.color['background'])
@@ -125,7 +125,7 @@ class Maps:
 
         if self.level == 1:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, height - 40, 20))
@@ -135,7 +135,7 @@ class Maps:
 
         elif self.level == 2:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1000, height - 40, 20))
@@ -147,7 +147,7 @@ class Maps:
 
         elif self.level == 3:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1200, height - 60, 30))
@@ -160,7 +160,7 @@ class Maps:
 
         elif self.level == 4:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1200, 500 - 60, 30))
@@ -172,7 +172,7 @@ class Maps:
 
         elif self.level == 5:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1300, 500 - 60, 25))
@@ -186,7 +186,7 @@ class Maps:
 
         elif self.level == 6:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1300, 500 - 60, 25))
@@ -200,7 +200,7 @@ class Maps:
 
         elif self.level == 7:
             for i in range(4):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, 500 - 60, 25))
@@ -212,7 +212,7 @@ class Maps:
 
         elif self.level == 8:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, height - 60, 25))
@@ -222,7 +222,7 @@ class Maps:
 
         elif self.level == 9:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, height - 60, 25))
@@ -235,7 +235,7 @@ class Maps:
 
         elif self.level == 10:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, height - 60, 25))
@@ -249,7 +249,7 @@ class Maps:
 
         elif self.level == 11:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, height - 60, 25))
@@ -263,7 +263,7 @@ class Maps:
 
         elif self.level == 12:
             for i in range(3):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, height - 60, 25))
@@ -274,7 +274,7 @@ class Maps:
 
         elif self.level == 13:
             for i in range(4):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, height - 60, 25))
@@ -289,7 +289,7 @@ class Maps:
 
         elif self.level == 14:
             for i in range(4):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(1100, height - 60, 25))
@@ -305,7 +305,7 @@ class Maps:
 
         elif self.level == 15:
             for i in range(5):
-                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "BIRD")
+                new_bird = physics_engine.Bird(40 * i + 5 * i, height - 40, 20, None, "WINDOW")
                 apples.append(new_bird)
 
             windows.append(physics_engine.Pig(900, height - 60, 25))
@@ -331,28 +331,28 @@ class Maps:
     def level_cleared(self):
         self.level += 1
 
-        level_cleared_text = interface.Label(700, 100, 400, 200, None, self.color['background'])
+        level_cleared_text = interface.Label(600, 180, 400, 200, None, self.color['background'])
         if self.level <= self.max_level:
-            level_cleared_text.add_text("LEVEL " + str(self.level - 1) + " CLEARED!", 80, "Fonts/Capture_it.ttf",
+            level_cleared_text.add_text("Деңгей " + str(self.level - 1) + " өтілді!", 80, "Fonts/Capture_it.ttf",
                                         (236, 240, 241))
         else:
-            level_cleared_text.add_text("ALL LEVEL CLEARED!", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
+            level_cleared_text.add_text("Барлық деңгей өтілді!", 80, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        score_text = interface.Label(750, 300, 300, 100, None, self.color['background'])
-        score_text.add_text("ҰПАЙ: " + str(self.score), 55, "Fonts/Capture_it.ttf", (236, 240, 241))
+        score_text = interface.Label(650, 350, 300, 100, None, self.color['background'])
+        score_text.add_text("Ұпай: " + str(self.score), 55, "Fonts/Capture_it.ttf", (236, 240, 241))
 
-        replay = interface.Button(350, 500, 300, 100, self.replay_level, (244, 208, 63), (247, 220, 111))
-        replay.add_text("PLAY AGAIN", 60, "Fonts/Capture_it.ttf", self.color['background'])
+        replay = interface.Button(250, 500, 500, 100, self.replay_level, (0, 255, 127), (144, 220, 144))
+        replay.add_text("Қайтадан", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         if self.level <= self.max_level:
-            next = interface.Button(750, 500, 300, 100, self.draw_map, (88, 214, 141), (171, 235, 198))
-            next.add_text("CONTINUE", 60, "Fonts/Capture_it.ttf", self.color['background'])
+            next = interface.Button(900, 500, 500, 100, self.draw_map, (240, 100, 240), (216, 191, 216))
+            next.add_text("Жайлғастыру", 60, "Fonts/Capture_it.ttf", self.color['background'])
         else:
-            next = interface.Button(750, 500, 300, 100, self.start_again, (88, 214, 141), (171, 235, 198))
-            next.add_text("START AGAIN", 60, "Fonts/Capture_it.ttf", self.color['background'])
+            next = interface.Button(900, 500, 500, 100, self.start_again, (0, 255, 127), (144, 220, 144))
+            next.add_text("Қайтадан", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
-        exit = interface.Button(1150, 500, 300, 100, close, (241, 148, 138), (245, 183, 177))
-        exit.add_text("QUIT", 60, "Fonts/Capture_it.ttf", self.color['background'])
+        exit = interface.Button(650, 700, 300, 100, close, (220, 20, 60), (245, 183, 177))
+        exit.add_text("Шығу", 60, "Fonts/Capture_it.ttf", self.color['background'])
 
         while True:
             for event in pygame.event.get():
