@@ -327,13 +327,13 @@ class Maps:
 
             for i in range(len(windows)):
                 for j in range(len(blocks)):
-                    pig_v, block_v = windows[i].velocity.magnitude, blocks[j].velocity.magnitude
-                    windows[i], blocks[j], result_block_pig = physics_engine.collision_handler(windows[i], blocks[j],
+                    window_v, block_v = windows[i].velocity.magnitude, blocks[j].velocity.magnitude
+                    windows[i], blocks[j], result_block_window = physics_engine.collision_handler(windows[i], blocks[j],
                                                                                                "BALL_N_BLOCK")
-                    pig_v1, block_v1 = windows[i].velocity.magnitude, blocks[j].velocity.magnitude
+                    window_v1, block_v1 = windows[i].velocity.magnitude, blocks[j].velocity.magnitude
 
-                    if result_block_pig:
-                        if abs(pig_v - pig_v1) > d_velocity:
+                    if result_block_window:
+                        if abs(window_v - window_v1) > d_velocity:
                             blocks_to_remove.append(blocks[j])
                             blocks[j].destroy()
                         if abs(block_v - block_v1) > d_velocity:
@@ -344,11 +344,11 @@ class Maps:
                 if not (apples[i].loaded or apples[i].velocity.magnitude == 0):
                     for j in range(len(blocks)):
                         apples_v, block_v = apples[i].velocity.magnitude, blocks[j].velocity.magnitude
-                        apples[i], blocks[j], result_bird_block = physics_engine.collision_handler(apples[i], blocks[j],
+                        apples[i], blocks[j], result_apple_block = physics_engine.collision_handler(apples[i], blocks[j],
                                                                                                    "BALL_N_BLOCK")
                         apples_v1, block_v1 = apples[i].velocity.magnitude, blocks[j].velocity.magnitude
 
-                        if result_bird_block:
+                        if result_apple_block:
                             if abs(apples_v - apples_v1) > d_velocity:
                                 if not blocks[j] in blocks_to_remove:
                                     blocks_to_remove.append(blocks[j])
@@ -357,16 +357,16 @@ class Maps:
             for i in range(len(windows)):
                 windows[i].move()
                 for j in range(i + 1, len(windows)):
-                    pig1_v, pig2_v = windows[i].velocity.magnitude, windows[j].velocity.magnitude
+                    window1_v, window2_v = windows[i].velocity.magnitude, windows[j].velocity.magnitude
                     windows[i], windows[j], result = physics_engine.collision_handler(windows[i], windows[j], "BALL")
-                    pig1_v1, pig2_v1 = windows[i].velocity.magnitude, windows[j].velocity.magnitude
+                    window1_v1, window2_v1 = windows[i].velocity.magnitude, windows[j].velocity.magnitude
                     result = True
                     if result:
-                        if abs(pig1_v - pig1_v1) > d_velocity:
+                        if abs(window1_v - window1_v1) > d_velocity:
                             if not windows[j] in windows_to_remove:
                                 windows_to_remove.append(windows[j])
                                 windows[j].dead()
-                        if abs(pig2_v - pig2_v1) > d_velocity:
+                        if abs(window2_v - window2_v1) > d_velocity:
                             if not windows[i] in windows_to_remove:
                                 windows_to_remove.append(windows[i])
                                 windows[i].dead()
@@ -380,13 +380,13 @@ class Maps:
                 if (not apples[i].loaded) and apples[i].velocity.magnitude:
                     apples[0].move()
                     for j in range(len(windows)):
-                        bird_v, pig_v = apples[i].velocity.magnitude, windows[j].velocity.magnitude
-                        apples[i], windows[j], result_bird_pig = physics_engine.collision_handler(apples[i], windows[j],
+                        apple_v, window_v = apples[i].velocity.magnitude, windows[j].velocity.magnitude
+                        apples[i], windows[j], result_apple_window = physics_engine.collision_handler(apples[i], windows[j],
                                                                                                   "BALL")
-                        bird_v1, pig_v1 = apples[i].velocity.magnitude, windows[j].velocity.magnitude
+                        apple_v1, window_v1 = apples[i].velocity.magnitude, windows[j].velocity.magnitude
                         result = True
-                        if result_bird_pig:
-                            if abs(bird_v - bird_v1) > d_velocity:
+                        if result_apple_window:
+                            if abs(apple_v - apple_v1) > d_velocity:
                                 if not windows[j] in windows_to_remove:
                                     windows_to_remove.append(windows[j])
                                     windows[j].dead()
@@ -439,9 +439,9 @@ class Maps:
             pygame.display.update()
 
             if all_rest(windows, apples, blocks):
-                for pig in windows_to_remove:
-                    if pig in windows:
-                        windows.remove(pig)
+                for window in windows_to_remove:
+                    if window in windows:
+                        windows.remove(window)
                         self.score += 100
 
                 for block in blocks_to_remove:
