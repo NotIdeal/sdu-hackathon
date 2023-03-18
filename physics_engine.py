@@ -1,5 +1,4 @@
 import pygame
-import sys
 from math import *
 import random
 
@@ -51,17 +50,16 @@ class Window:
         else:
             self.velocity = v
 
-        self.pig1_image = pygame.image.load("Images/pig1.png")
-        self.pig2_image = pygame.image.load("Images/pig3.png")
+        self.window_image = pygame.image.load("Images/windowBefore2.png")
 
-        self.pig_dead = pygame.image.load("Images/pig_damaged.png")
+        self.broken_window = pygame.image.load("Images/windowAfter2.png")
 
-        self.bird_image = pygame.image.load("Images/bird.png")
+        self.apple_image = pygame.image.load("Images/bird.png")
 
         if type == "WINDOW":
-            self.image = random.choice([self.pig1_image, self.pig2_image])
+            self.image = self.window_image
         else:
-            self.image = self.bird_image
+            self.image = self.apple_image
 
         self.type = type
         self.color = color
@@ -79,13 +77,13 @@ class Window:
                 pygame.draw.ellipse(display, self.color, (point[0], point[1], 3, 3), 1)
 
         if (self.type == "WINDOW") and (not self.animate_count % 20) and (not self.isDead):
-            self.image = random.choice([self.pig1_image, self.pig2_image])
+            self.image = self.window_image
 
         display.blit(self.image, (self.x - self.r, self.y - self.r))
 
     def dead(self):
         self.isDead = True
-        self.image = self.pig_dead
+        self.image = self.broken_window
 
     def move(self):
         self.velocity = add_vectors(self.velocity, gravity)

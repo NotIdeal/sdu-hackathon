@@ -106,21 +106,22 @@ class Maps:
         blocks = []
         walls = []
         self.score = 0
-
+        
+        ground_level = 40
         for i in range(3):
             new_apple = physics_engine.Apple(40 * i + 5 * i, height - 40, 20, None, "APPLE")
             apples.append(new_apple)
 
         if self.level == 1:
-            windows.append(physics_engine.Window(1400, height - 40, 20))
+            windows.append(physics_engine.Window(1400, height - 40, ground_level))
         if self.level == 2:
-            windows.append(physics_engine.Window(1100, height - 40, 20))
-            windows.append(physics_engine.Window(1500, height - 40, 20))
+            windows.append(physics_engine.Window(1100, height - ground_level, 20))
+            windows.append(physics_engine.Window(1500, height - ground_level, 20))
 
             blocks.append(physics_engine.Block(1300, height - 60, 60))
         elif self.level == 3:
-            windows.append(physics_engine.Window(1000, height - 40, 20))
-            windows.append(physics_engine.Window(1400, height - 40, 20))
+            windows.append(physics_engine.Window(1000, height - ground_level, 20))
+            windows.append(physics_engine.Window(1400, height - ground_level, 20))
 
             blocks.append(physics_engine.Block(1200, height - 60, 60))
             blocks.append(physics_engine.Block(1200, height - 2 * 35, 60))
@@ -142,7 +143,7 @@ class Maps:
             blocks.append(physics_engine.Block(1150, 500 - 100, 100))
             blocks.append(physics_engine.Block(1100, height - 100, 100))
         elif self.level == 6:
-            apples.append(physics_engine.Apple(180, height - 40, 20, None, "APPLE"))
+            apples.append(physics_engine.Apple(180, height - ground_level, 20, None, "APPLE"))
 
             windows.append(physics_engine.Window(1100, 500 - 60, 25))
             windows.append(physics_engine.Window(1300, 500 - 60, 25))
